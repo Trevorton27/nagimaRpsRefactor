@@ -7,3 +7,10 @@ h1 {
   justify-content: space-around;
   margin: 100px;
 }
+
+h2 {
+  text-align: center;
+  font-size: 100px;
+}
+
+}
