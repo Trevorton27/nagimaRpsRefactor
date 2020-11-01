@@ -9,15 +9,38 @@
   </head>
   <body>
     <h1>Make you selection!</h1>
+
+    <div class="flexbox">
+      <button id="toggle-btn">New Game</button>
+    <div class="columns">
+    
+      <div class="column">
+        <div class="player-panel">
+        <div class="player-name" id="name-1">Player</div>
+        <div class="player-score" id="score-1">0</div>
+      </div>
+    </div> 
+
+    <div class="column">
+      <div class="computer-panel">
+        <div class="computer-name" id="name-2">Computer</div>
+        <div class="computer-score" id="score-2">0</div>
+      </div> 
+    </div> 
+  </div>
+</div> 
+
     <nav class="container">
-      <img id="rock" src="images/rock.png" onclick="DoSomething('rock')"/>
-      <img id="paper" src="images/paper.png" onclick="DoSomething('paper');"/>
-      <img id="scissors" src="images/scissors.png" onclick="DoSomething('scissors');"/>
-      <!-- <button id="rock"><img src="images/rock.png" /></buton> 
-      <button id="paper"><img src="images/paper.png"/></button>
-      <button id="scissors"><img src="images/scissors.png"/></button> -->
+      <img id="rock" src="images/rock.png" onclick="DoSomething('Rock');" />
+      <img id="paper" src="images/paper.png" onclick="DoSomething('Paper');" />
+      <img id="scissors" src="images/scissors.png" onclick="DoSomething('Scissors');"/>
     </nav>
-    <!-- <h2 id="resultstxt">------</h2> -->
+    <div class="displayresults">
+      <p id="results"></p>
+      <p id="user-choice"></p>
+      <p id="computer-choice"></p>
+    </div>
+
     <script src="main.js"></script>
   </body>
 </html>

@@ -1,53 +1,75 @@
 function computer_choice() {
-    choice = Math.random();
-    if (choice <= 0.33) {
-      choice = "rock";
-    } else if (choice <= 0.66) {
-      choice = "paper";
-    } else {
-      choice = "scissors";
-    }
-    console.log(choice);
-    return choice;
+  choice = Math.random();
+  if (choice <= 0.33) {
+    choice = "Rock";
+  } else if (choice <= 0.66) {
+    choice = "Paper";
+  } else {
+    choice = "Scissors";
   }
-  
-  
-  
-  function DoSomething(yourchoice) {
-    // yourchoice = ['rock', 'paper', 'scissors'];
-    robotpick = computer_choice();
-  
-    // compare for tie
-    if (yourchoice == robotpick) {
-      resultstxt = 'TIE!'
-      alert("IT'S A TIE !!! . Computer's choice - " + robotpick);
-    }
-    // compare yourchoice ROCK to computers choice
-    else if (yourchoice == "rock" && robotpick == "paper") {
-      resultstxt = 'LOSER!'
-      alert("YOU LOST. Computer's choice - " + robotpick);
-    } 
-    else if (yourchoice == "rock" && robotpick == "scissors") {
-      resultstxt = 'WINNER!'
-      alert("YOU WON. Computer's choice - " + robotpick);
-    }
-    //compare yourchoice PAPER to computers choice
-    else if (yourchoice == "paper" && robotpick == "rock") {
-      resultstxt = 'WINNER!'
-    alert("YOU WON vs " + robotpick);
-    } 
-    else if (yourchoice == "paper" && robotpick == "scissors") {
-      resultstxt = 'LOSER!'
-      alert("YOU LOST. Computer's choice -  " + robotpick);
-    }
-    //compare yourchoice SCISSORS to computers choice
-    else if (yourchoice == "scissors" && robotpick == "rock") {
-      resultstxt = 'LOSER!'
-      alert("YOU LOST. Computer's choice - " + robotpick);
-    } 
-    else if (yourchoice == "scissors" && robotpick == "paper") {
-      resultstxt = 'WINNER!'
-      alert("YOU WON. Computer's choice - " + robotpick);
-    }
+  console.log(choice);
+  return choice;
+}
+
+const playerScore = document.getElementById("score-1");
+const computerScore = document.getElementById("score-2");
+
+function DoSomething(yourchoice) {
+  robotpick = computer_choice();
+
+  const resultsTag = document.getElementById("results");
+  const userChoiceTag = document.getElementById("user-choice");
+  const computerChoiceTag = document.getElementById("computer-choice");
+
+  // compare for tie
+  if (yourchoice == robotpick) {
+    resultsTag.textContent = "It's a TIE";
+    userChoiceTag.textContent = "User Choice: " + yourchoice;
+    computerChoiceTag.textContent = "Computer Choice: " + robotpick;
+  }
+  // compare yourchoice ROCK to computers choice
+  else if (yourchoice == "Rock" && robotpick == "Paper") {
+    resultsTag.textContent = "You LOST!";
+    userChoiceTag.textContent = "User Choice: " + yourchoice;
+    computerChoiceTag.textContent = "Computer Choice: " + robotpick;
+    computerScore.innerHTML = parseInt(computerScore.innerHTML) + 1;
+  } else if (yourchoice == "Rock" && robotpick == "Scissors") {
+    resultsTag.textContent = "You WON!";
+    userChoiceTag.textContent = "User Choice: " + yourchoice;
+    computerChoiceTag.textContent = "Computer Choice: " + robotpick;
+    playerScore.innerHTML = parseInt(playerScore.innerHTML) + 1;
+  }
+  //compare yourchoice Paper to computers choice
+  else if (yourchoice == "Paper" && robotpick == "Rock") {
+    resultsTag.textContent = "You WON!";
+    userChoiceTag.textContent = "User Choice: " + yourchoice;
+    computerChoiceTag.textContent = "Computer Choice: " + robotpick;
+    playerScore.innerHTML = parseInt(playerScore.innerHTML) + 1;
+  } else if (yourchoice == "Paper" && robotpick == "Scissors") {
+    resultsTag.textContent = "You LOST!";
+    userChoiceTag.textContent = "User Choice: " + yourchoice;
+    computerChoiceTag.textContent = "Computer Choice: " + robotpick;
+    computerScore.innerHTML = parseInt(computerScore.innerHTML) + 1;
+  }
+  //compare yourchoice Scissors to computers choice
+  else if (yourchoice == "Scissors" && robotpick == "Rock") {
+    resultsTag.textContent = "You LOST!";
+    userChoiceTag.textContent = "User Choice: " + yourchoice;
+    computerChoiceTag.textContent = "Computer Choice: " + robotpick;
+    computerScore.innerHTML = parseInt(computerScore.innerHTML) + 1;
+  } else if (yourchoice == "Scissors" && robotpick == "Paper") {
+    resultsTag.textContent = "You WON!";
+    userChoiceTag.textContent = "User Choice: " + yourchoice;
+    computerChoiceTag.textContent = "Computer Choice: " + robotpick;
+    playerScore.innerHTML = parseInt(playerScore.innerHTML) + 1;
+  }
   return robotpick;
-  }
+}
+
+document.getElementById("toggle-btn").addEventListener("click", function () {
+  document.getElementById("user-choice").innerHTML = "";
+  document.getElementById("computer-choice").innerHTML = "";
+  document.getElementById("results").innerHTML = "";
+  playerScore.innerText = 0;
+  computerScore.innerText = 0;
+});

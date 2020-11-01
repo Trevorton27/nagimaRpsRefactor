@@ -1,3 +1,7 @@
+html {
+  background-color: lightblue;
+}
+
 h1 {
   text-align: center;
 }
@@ -5,7 +9,7 @@ h1 {
 .container {
   display: flex;
   justify-content: space-around;
-  margin: 100px;
+  margin: 10px;
 }
 
 h2 {
@@ -13,4 +17,54 @@ h2 {
   font-size: 100px;
 }
 
+img {
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
+
+.displayresults {
+  text-align: center;
+  font-size: 28px;
+}
+
+.flexbox {
+  color: black;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+}
+.columns {
+  display: flex;
+}
+
+.column {
+  margin: 0 250px;
+  border: 2px solid pink;
+}
+
+.player-panel {
+  font-size: 25px;
+}
+
+.computer-panel {
+  font-size: 25px;
+}
+
+#toggle-btn {
+  font-size: 20px;
+  border-radius: 3px;
+  border: 1px solid blue;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  background-color: lightpink;
+  cursor: pointer;
 }
