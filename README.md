@@ -1,7 +1,7 @@
 It's a Rock-Paper-Scissors Game. You are playng against the Computer. 
 Used HTML, CSS, JavaScript. 
 
-Click [here](https://nagimenok.github.io/roc/index.html) to check it out! 
+Click [here](https://nagimenok.github.io/rock-paper-scissors/index.html) to check it out! 
 
 ![](images/game.png)
 
