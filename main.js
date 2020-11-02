@@ -35,6 +35,28 @@ function getComputerChoice() {
   return choice;
 }
 
+function win(playerChoice, computerChoice) {
+  resultsTag.textContent = 'You WON!';
+  userChoiceTag.textContent = 'User Choice: ' + playerChoice;
+  computerChoiceTag.textContent = 'Computer Choice: ' + computerChoice;
+  userScore++;
+  playerScoreDisplay.textContent = userScore;
+}
+
+function lost(playerChoice, computerChoice) {
+  computerScore++;
+  resultsTag.textContent = 'You LOST!';
+  userChoiceTag.textContent = 'User Choice: ' + playerChoice;
+  computerChoiceTag.textContent = 'Computer Choice: ' + computerChoice;
+  computerScoreDisplay.textContent = computerScore;
+}
+
+function tie(playerChoice, computerChoice) {
+  resultsTag.textContent = "It's a TIE";
+  userChoiceTag.textContent = 'User Choice: ' + playerChoice;
+  computerChoiceTag.textContent = 'Computer Choice: ' + computerChoice;
+}
+
 function getplayerChoice(playerChoice) {
   const computerChoice = getComputerChoice();
 
@@ -42,27 +64,17 @@ function getplayerChoice(playerChoice) {
     case 'rockscissors':
     case 'paperrock':
     case 'scissorspaper':
-      resultsTag.textContent = 'You WON!';
-      userChoiceTag.textContent = 'User Choice: ' + playerChoice;
-      computerChoiceTag.textContent = 'Computer Choice: ' + computerChoice;
-      userScore++;
-      playerScoreDisplay.textContent = userScore;
+      win(playerChoice, computerChoice);
       break;
     case 'rockrock':
     case 'paperpaper':
     case 'scissorsscissors':
-      resultsTag.textContent = "It's a TIE";
-      userChoiceTag.textContent = 'User Choice: ' + playerChoice;
-      computerChoiceTag.textContent = 'Computer Choice: ' + computerChoice;
+      tie(playerChoice, computerChoice);
       break;
     case 'rockpaper':
     case 'scissorsrock':
     case 'paperscissors':
-      computerScore++;
-      resultsTag.textContent = 'You LOST!';
-      userChoiceTag.textContent = 'User Choice: ' + playerChoice;
-      computerChoiceTag.textContent = 'Computer Choice: ' + computerChoice;
-      computerScoreDisplay.textContent = computerScore;
+      lost(playerChoice, computerChoice);
       break;
   }
 }
