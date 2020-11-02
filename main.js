@@ -2,9 +2,9 @@ let userScore = 0;
 let computerScore = 0;
 
 const playerScoreDisplay = document.getElementById('score-1');
-playerScoreDisplay.textContent = userScore;
+// playerScoreDisplay.textContent = userScore;
 const computerScoreDisplay = document.getElementById('score-2');
-computerScoreDisplay.textContent = computerScore;
+// computerScoreDisplay.innerHTML = computerScore;
 
 const resultsTag = document.getElementById('results');
 const userChoiceTag = document.getElementById('user-choice');
@@ -46,6 +46,7 @@ function getplayerChoice(playerChoice) {
       userChoiceTag.textContent = 'User Choice: ' + playerChoice;
       computerChoiceTag.textContent = 'Computer Choice: ' + computerChoice;
       userScore++;
+      playerScoreDisplay.textContent = userScore;
       break;
     case 'rockrock':
     case 'paperpaper':
@@ -61,6 +62,7 @@ function getplayerChoice(playerChoice) {
       resultsTag.textContent = 'You LOST!';
       userChoiceTag.textContent = 'User Choice: ' + playerChoice;
       computerChoiceTag.textContent = 'Computer Choice: ' + computerChoice;
+      computerScoreDisplay.textContent = computerScore;
       break;
   }
 }
