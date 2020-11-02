@@ -69,9 +69,9 @@ function getplayerChoice(playerChoice) {
 
 const startNewGame = document.getElementById('toggle-btn');
 startNewGame.addEventListener('click', function () {
-  userChoiceTag.innerHTML = '';
-  computerChoiceTag.innerHTML = '';
-  resultsTag.innerHTML = '';
-  playerScoreDisplay.innerText = 0;
-  computerScoreDisplay.innerText = 0;
+  userChoiceTag.textContent = '';
+  computerChoiceTag.textContent = '';
+  resultsTag.textContent = '';
+  playerScoreDisplay.textContent = 0;
+  computerScoreDisplay.textContent = 0;
 });
